@@ -64,7 +64,10 @@
 // if OpenGL version is required by any other module, it uses rlGetVersion()
 
 // Choose opengl version here or just define it at compile time: -DGRAPHICS_API_OPENGL_33
-//#define GRAPHICS_API_OPENGL_11     // Only available on PLATFORM_DESKTOP
+
+//OpenGL 1.1  por padrão
+#define GRAPHICS_API_OPENGL_11     // Only available on PLATFORM_DESKTOP
+
 //#define GRAPHICS_API_OPENGL_33     // Only available on PLATFORM_DESKTOP and RLGL_OCULUS_SUPPORT
 //#define GRAPHICS_API_OPENGL_ES2    // Only available on PLATFORM_ANDROID or PLATFORM_RPI or PLATFORM_WEB
 
@@ -95,15 +98,15 @@
 //----------------------------------------------------------------------------------
 #if defined(GRAPHICS_API_OPENGL_11) || defined(GRAPHICS_API_OPENGL_33)
     // NOTE: This is the maximum amount of lines, triangles and quads per frame, be careful!
-    #define MAX_LINES_BATCH         8192
-    #define MAX_TRIANGLES_BATCH     4096
-    #define MAX_QUADS_BATCH         4096
+    #define MAX_LINES_BATCH         (20*8192)
+    #define MAX_TRIANGLES_BATCH     (20*4096)
+    #define MAX_QUADS_BATCH         (20*4096)
 #elif defined(GRAPHICS_API_OPENGL_ES2)
     // NOTE: Reduce memory sizes for embedded systems (RPI and HTML5)
     // NOTE: On HTML5 (emscripten) this is allocated on heap, by default it's only 16MB!...just take care...
-    #define MAX_LINES_BATCH         1024    // Critical for wire shapes (sphere)
-    #define MAX_TRIANGLES_BATCH     2048    // Critical for some shapes (sphere)
-    #define MAX_QUADS_BATCH         1024    // Be careful with text, every letter maps a quad
+    #define MAX_LINES_BATCH         (10*1024)    // Critical for wire shapes (sphere)
+    #define MAX_TRIANGLES_BATCH     (10*2048)    // Critical for some shapes (sphere)
+    #define MAX_QUADS_BATCH         (10*1024)    // Be careful with text, every letter maps a quad
 #endif
 
 // Texture parameters (equivalent to OpenGL defines)
