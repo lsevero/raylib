@@ -66,8 +66,7 @@
 // Choose opengl version here or just define it at compile time: -DGRAPHICS_API_OPENGL_33
 
 //OpenGL 1.1  por padrão
-#define GRAPHICS_API_OPENGL_11     // Only available on PLATFORM_DESKTOP
-
+//#define GRAPHICS_API_OPENGL_11     // Only available on PLATFORM_DESKTOP
 //#define GRAPHICS_API_OPENGL_33     // Only available on PLATFORM_DESKTOP and RLGL_OCULUS_SUPPORT
 //#define GRAPHICS_API_OPENGL_ES2    // Only available on PLATFORM_ANDROID or PLATFORM_RPI or PLATFORM_WEB
 
