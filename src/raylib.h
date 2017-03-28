@@ -256,11 +256,11 @@
 
 // NOTE: MSC C++ compiler does not support compound literals (C99 feature)
 // Plain structures in C++ (without constructors) can be initialized from { } initializers.
-#ifdef __cplusplus
-    #define CLITERAL
-#else
+//#ifdef __cplusplus
+    //#define CLITERAL
+//#else
     #define CLITERAL    (Color)
-#endif
+//#endif
 
 // Some Basic Colors
 // NOTE: Custom raylib color palette for amazing visuals on WHITE background
