@@ -103,9 +103,9 @@
 #elif defined(GRAPHICS_API_OPENGL_ES2)
     // NOTE: Reduce memory sizes for embedded systems (RPI and HTML5)
     // NOTE: On HTML5 (emscripten) this is allocated on heap, by default it's only 16MB!...just take care...
-    #define MAX_LINES_BATCH         (20*1024)    // Critical for wire shapes (sphere)
-    #define MAX_TRIANGLES_BATCH     (20*2048)    // Critical for some shapes (sphere)
-    #define MAX_QUADS_BATCH         (20*1024)    // Be careful with text, every letter maps a quad
+    #define MAX_LINES_BATCH         (20*8192)    // Critical for wire shapes (sphere)
+    #define MAX_TRIANGLES_BATCH     (5*2048)    // Critical for some shapes (sphere)
+    #define MAX_QUADS_BATCH         (5*1024)    // Be careful with text, every letter maps a quad
 #endif
 
 // Texture parameters (equivalent to OpenGL defines)
